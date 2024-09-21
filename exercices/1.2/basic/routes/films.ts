@@ -35,13 +35,10 @@ const films: Film[] =[
     
 ]
 
-let num : number =0;
+
 
 router.get('/',(_req,res)=>{
-   
-    num++;
-    console.log(" GET counter : "+num);
-    
+  
     return res.json(films);
 })
 
