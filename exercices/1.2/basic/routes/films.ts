@@ -35,7 +35,7 @@ const films: Film[] =[
     
 ]
 
-let num=0;
+let num : number =0;
 
 router.get('/',(_req,res)=>{
    
