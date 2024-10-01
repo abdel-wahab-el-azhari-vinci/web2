@@ -45,7 +45,7 @@ router.get('/',(req,res)=>{
 
   const minDuration= Number(req.query['minimum-duration']);
 
-  if (minDuration < 0) res.json("Wrong minimum duration");
+  if (minDuration <= 0) res.json("Wrong minimum duration");
 
   
   const filterFilms= films.filter((film)=>{
