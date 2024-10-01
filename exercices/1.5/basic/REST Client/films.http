@@ -1,0 +1,25 @@
+ ### Read all information about film
+ @baseUrl=http://localhost:3000
+ GET {{baseUrl}}/films
+
+
+
+
+### Read information about a specific id
+ GET {{baseUrl}}/films/1
+
+###  Read all films bigger or equal to 154
+GET {{baseUrl}}/films?minimum-duration=154
+
+### Create a new Film
+POST {{baseUrl}}/films
+Content-Type: application/json
+
+{
+    "title": "NewFilm",
+    "director": "abdel",
+    "duration": 180,
+    "budget": 5,
+    "description": "that's a new Film !",
+    "imageUrl": "https://example.com/godfather.jpg"
+}
