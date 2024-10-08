@@ -1,0 +1,63 @@
+ ### Read all information about film
+ @baseUrl=http://localhost:3000
+ GET {{baseUrl}}/films
+
+
+
+
+### Read information about a specific id
+ GET {{baseUrl}}/films/1
+
+###  Read all films bigger or equal to 154
+GET {{baseUrl}}/films?minimum-duration=154
+
+### Create a new Film
+POST {{baseUrl}}/films
+Content-Type: application/json
+
+{
+    "title": "NewFilm",
+    "director": "abdel",
+    "duration": 180,
+    "budget": 5,
+    "description": "that's a new Film !",
+    "imageUrl": "https://example.com/godfather.jpg"
+}
+
+
+### Delete a drink
+DELETE {{baseUrl}}/films/2
+
+
+### Update the drink identified by 5
+PATCH {{baseUrl}}/films/3
+Content-Type: application/json
+
+{
+    "title":"New film !!"
+}
+
+### create or update a film
+PUT {{baseUrl}}/films/2
+Content-Type: application/json
+
+{
+    "title":"Harry potter",
+    "director":"harry",
+    "duration":180
+}
+
+### create a film that id didn't exist !
+PUT {{baseUrl}}/films/5
+Content-Type: application/json
+
+{
+    "title":"Harry",
+    "director":"harry",
+    "duration":180
+}
+
+
+
+
+
