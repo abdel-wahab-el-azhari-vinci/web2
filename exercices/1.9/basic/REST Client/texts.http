@@ -1,0 +1,34 @@
+### read all textes
+@baseUrl=http://localhost:3000
+GET {{baseUrl}}/texts
+
+
+### read all textes about a specific level
+GET {{baseUrl}}/texts?level=easy
+
+
+###  read one text with a specific id 
+GET {{baseUrl}}/texts/967979ee-4c4b-4f93-920b-115976fa4abb
+
+
+### create a texte
+POST {{baseUrl}}/texts
+Content-Type: application/json
+
+{
+    "content":"that's content !",
+    "level":"hard"
+}
+
+### delete a specific text
+DELETE {{baseUrl}}/texts/967979ee-4c4b-4f93-920b-115976fa4abb
+
+
+### update one text
+PUT {{baseUrl}}/texts/98c72e0e-db05-442a-b035-061f56f7e7f8
+Content-Type: application/json
+
+{
+    "content":"new Content !",
+    "level":"easy"
+}
