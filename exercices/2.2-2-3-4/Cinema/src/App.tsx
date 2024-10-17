@@ -31,7 +31,7 @@ const Cinema = (props: CinemaProps) => {
   );
 };
 
-interface PageTitleProps {
+type PageTitleProps =  {
   title: string;
 }
 
