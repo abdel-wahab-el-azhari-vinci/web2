@@ -3,27 +3,30 @@ type MovieProps = {
   director: string;
 };
 
-
 type CinemaProps = {
   name: string;
-  movie1:MovieProps;
-  movie2:MovieProps;
-  
+  movie1: MovieProps;
+  movie2: MovieProps;
 };
-
-
-
-
 
 const Cinema = (props: CinemaProps) => {
   return (
     <div>
       <h2>{props.name}</h2>
-     <p>{props.movie1.title}</p>
-     <p>{props.movie1.director}</p>
-     <p>{props.movie2.title}</p>
-     <p>{props.movie2.director}</p>
-      
+      <table>
+        <tr>
+          <th>Title</th>
+          <th>Director</th>
+        </tr>
+        <tr>
+          <td>{props.movie1.title}</td>
+          <td>{props.movie1.director}</td>
+        </tr>
+        <tr>
+          <td>{props.movie2.title}</td>
+          <td>{props.movie2.director}</td>
+        </tr>
+      </table>
     </div>
   );
 };
@@ -45,21 +48,21 @@ const App = () => {
 
   const cinema1Name = "UGC DeBrouckère";
 
-  const movie1:MovieProps = {
+  const movie1: MovieProps = {
     title: "HAIKYU-THE DUMPSTER BATTLE",
     director: "Susumu Mitsunaka",
   };
-  const movie2:MovieProps = {
+  const movie2: MovieProps = {
     title: "GOODBYE JULIA ",
     director: "Mohamed Kordofani",
   };
 
   const cinema2Name = "UGC Toison d'Or";
-  const movie3:MovieProps = {
+  const movie3: MovieProps = {
     title: "THE WATCHERS",
     director: "Ishana Night Shyamalan",
   };
-  const movie4:MovieProps = {
+  const movie4: MovieProps = {
     title: "BAD BOYS: RIDE OR DIE",
     director: "Adil El Arbi, Bilall Fallah",
   };
