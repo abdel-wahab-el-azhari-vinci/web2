@@ -11,12 +11,12 @@ interface UsersPorps{
 const User = (props:UsersPorps)=>{
 
     return (
-     <div>
+     <div className='Center'>
         <h2>Nom : {props.nom}</h2>
         <p>Age : {props.age}</p>
         <div className={props.isOnline ? "online" : "offline"}>
        {props.isOnline ? "En ligne" : "Hors ligne"}
-</div>
+         </div>
       
      </div>
     );

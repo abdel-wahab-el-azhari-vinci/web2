@@ -6,7 +6,7 @@ function App() {
   const userA={nom:"Albert",age:25,isOnline:false};
   const userB={nom:"Albert",age:25,isOnline:true};
   return(
-    <div>
+    <div  className="test">
    <User nom={user.nom} age={user.age} isOnline={user.isOnline} />
    
    <User nom={userA.nom} age={userA.age} isOnline={userA.isOnline} />
