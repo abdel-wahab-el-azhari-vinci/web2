@@ -66,8 +66,9 @@ const ColorBox = () => {
     
     
    <div className="encadre" style={{backgroundColor : `${OldCurrentColor}`}}>
-       <p>{OldCurrentColor}</p>
+       
     <button  onClick={()=>setColor(NewColor)}  className="button">{NewColor}</button>
+    <p>{OldCurrentColor}</p>
 
    </div>
     
