@@ -50,7 +50,7 @@ const ColorBox = () => {
               return old;
             }
 
-             old = colors[i-1];
+             old   = colors[i-1];
              return old;
           }
     }
