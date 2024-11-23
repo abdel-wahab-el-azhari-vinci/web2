@@ -11,7 +11,7 @@ const  AddMoviePage=()=>{
     const [link, setLink] = useState("");
     const [description, setDescription] = useState("");
     const [budget, setBudget] = useState(0);
-    const {addFilm}:FilmContext = useOutletContext();
+    const {addFilm,nextIdFilm}:FilmContext = useOutletContext();
     const navigate = useNavigate();
   
    
@@ -19,6 +19,7 @@ const  AddMoviePage=()=>{
         e.preventDefault();
         console.log("submit : ", title, director, duree);
         const newFilm = {
+          id : nextIdFilm(),
           title: title,
           director: director,
           duree: duree,

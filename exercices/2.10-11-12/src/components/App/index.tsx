@@ -26,6 +26,7 @@ const NavBar = ()=>{
 
 const defaultFilms: FilmProps[] = [
   {
+    id :1,
     title: "Inception",
     director: "Christopher Nolan",
     duree: 148,
@@ -34,7 +35,8 @@ const defaultFilms: FilmProps[] = [
       "A mind-bending thriller where a thief enters the dreams of others to steal secrets.",
     budget: 160000000,
   },
-  {
+  { 
+    id : 2,
     title: "Endgame avengers",
     director: "Jean-Pierre Jeunet",
     duree: 122,
@@ -42,7 +44,8 @@ const defaultFilms: FilmProps[] = [
     description:
       "A whimsical depiction of contemporary Parisian life, seen through the eyes of a young waitress.",
   },
-  {
+  { 
+    id: 4,
     title: "Spirited Away",
     director: "Hayao Miyazaki",
     duree: 125,
@@ -52,6 +55,7 @@ const defaultFilms: FilmProps[] = [
     budget: 19000000,
   },
   {
+    id: 5,
     title: "The avengers",
     director: "Par moi",
     duree: 180,
@@ -59,7 +63,8 @@ const defaultFilms: FilmProps[] = [
     description:
       "The aging patriarch of an organized crime dynasty transfers control to his reluctant son.",
   },
-  {
+  { 
+    id:6,
     title: "The Godfather",
     director: "Francis Ford Coppola",
     duree: 175,
@@ -71,8 +76,13 @@ const defaultFilms: FilmProps[] = [
 
 function App() {
   const [films, setFilms] = useState(defaultFilms);
-  const addFilm = (newFilm: FilmProps) => {
 
+  const nextIdFilm =()=>{
+    return films.length+1;
+  }
+
+  const addFilm = (newFilm: FilmProps) => {
+    newFilm.id = nextIdFilm();
     const filmAdded = { ...newFilm };
 
     setFilms([...films, filmAdded]);
@@ -83,6 +93,7 @@ function App() {
     addFilm,
     films,
     setFilms,
+    nextIdFilm,
 
   }
  
@@ -96,5 +107,6 @@ function App() {
     </>
   )
 }
+
 
 export default App;
