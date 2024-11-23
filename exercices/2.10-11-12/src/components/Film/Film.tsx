@@ -1,16 +1,8 @@
 import { SyntheticEvent, useState } from "react";
 import "./Film.css";
+import {FilmProps} from '../../../type.tsx';
 
-interface FilmProps {
-  title: string;
-  director: string;
-  duree: number;
-  link?: string;
-  description?: string;
-  budget?: number;
-}
-
-const defaultFilms: FilmProps[] = [
+const defaultFilms:FilmProps[]  = [
   {
     title: "Inception",
     director: "Christopher Nolan",
