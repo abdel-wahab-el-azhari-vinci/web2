@@ -71,6 +71,7 @@ const  AddMoviePage=()=>{
       const budgetInputValue = parseInt(budgetInput.value);
       if (isNaN(budgetInputValue)) {
         console.log("Ce n'est pas un nombre !");
+     
       }
       console.log("change in budgetInput:", budgetInput.value);
       setBudget(budgetInputValue);

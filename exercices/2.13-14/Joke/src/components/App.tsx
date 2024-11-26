@@ -20,7 +20,16 @@ function App() {
         return response.json();
       })
       .then((data: Joke) => {
-        setJokes([data]);
+        const timer = setTimeout(() => {
+
+          setJokes([data]);;
+    
+        }, 10000);
+    
+    
+    
+        return () => clearTimeout(timer);
+       
       })
       .catch((err) => {
         console.error("HomePage::error: ", err);
