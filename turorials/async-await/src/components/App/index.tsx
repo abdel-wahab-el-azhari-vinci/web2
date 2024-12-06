@@ -68,16 +68,52 @@ const App = () => {
 
   useEffect(() => {
 
-    fetchPizzas();
+    fetch("http://localhost:3000/pizzas")
+
+      .then((response) => {
+
+        if (!response.ok)
+
+          throw new Error(
+
+            `fetch error : ${response.status} : ${response.statusText}`
+
+          );
+
+        return response.json();
+
+      })
+
+      .then((pizzas) => setPizzas(pizzas))
+
+      .catch((err) => {
+
+        console.error("HomePage::error: ", err);
+
+      });
 
   }, []);
 
-
-  const fetchPizzas = async () => {
-
+  const addPizza = async (newPizza: NewPizza) => {
+    const pizzaAdded = { ...newPizza, id: nextPizzaId(pizzas) };
     try {
 
-      const response = await fetch("http://localhost:3000/pizzas");
+      const options = {
+
+        method: "POST",
+
+        body: JSON.stringify(newPizza),
+
+        headers: {
+
+          "Content-Type": "application/json",
+
+        },
+
+      };
+
+
+      const response = await fetch("http://localhost:3000/pizzas", options); // fetch retourne une "promise" => on attend la réponse
 
 
       if (!response.ok)
@@ -89,21 +125,18 @@ const App = () => {
         );
 
 
-      const pizzas = await response.json();
+      const createdPizza = await response.json(); // json() retourne une "promise" => on attend les données
 
-      setPizzas(pizzas);
+
+      setPizzas([...pizzas, createdPizza]);
 
     } catch (err) {
 
-      console.error("HomePage::error: ", err);
+      console.error("AddPizzaPage::error: ", err);
 
     }
 
-  };
-
-  const addPizza = (newPizza: NewPizza) => {
-    const pizzaAdded = { ...newPizza, id: nextPizzaId(pizzas) };
-    setPizzas([...pizzas, pizzaAdded]);
+  
   };
 
   const handleHeaderClick = () => {

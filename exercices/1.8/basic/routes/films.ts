@@ -75,7 +75,7 @@ router.post("/", (req, res) => {
   const { title, director, duration, budget, description, imageUrl } =
     body as NewFilm;
     const film= {title:title,director:director,duration:duration,budget:budget,description:description,imageUrl:imageUrl};
-  const newFilm=createOneFilm(film)
+  const newFilm=createOneFilm(film);
   
 
   
@@ -173,7 +173,7 @@ router.put("/:id", (req, res) => {
   const { title, director, duration } = body as NewFilm;
   
   const filme= {title:title,director:director,duration:duration};
-  const newFilm=createOneFilm(filme)
+  const newFilm=createOneFilm(filme);
   
 
   
