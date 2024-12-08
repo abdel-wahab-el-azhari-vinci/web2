@@ -1,0 +1,47 @@
+.footer { background-color: black; 
+    text-align: center; 
+    padding: 10px; 
+    position: fixed; 
+    width: 100%; 
+    bottom: 0; 
+    left: 0; /* Assurez-vous que le footer est aligné à gauche */ 
+    margin: 0; /* Supprimez les marges potentielles */ 
+    box-sizing: border-box; /* Assurez-vous que le padding n'affecte pas la largeur totale */ 
+ }
+
+ .header {
+    background-color: black;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    margin: 0;
+    box-sizing: border-box;
+    z-index: 1000; /* S'assure que le header reste au-dessus des autres contenus */
+}
+
+
+
+/* css for images */
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.image-container img {
+    border: 5px solid #ddd; /* Bordure grise */
+    border-radius: 15px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre portée */
+    width: 600px; /* Taille initiale plus grande */
+    height: auto; /* Maintient les proportions de l'image */
+    transition: transform 0.2s; /* Animation pour le survol */
+}
+
+.image-container img:hover {
+    transform: scale(1.1); /* Agrandit l'image au survol */
+}
+

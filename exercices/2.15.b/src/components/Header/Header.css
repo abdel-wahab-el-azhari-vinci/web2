@@ -1,0 +1,20 @@
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.image-container img {
+    border: 5px solid #ddd; /* Bordure grise */
+    border-radius: 15px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre portée */
+    width: 50%; /* Largeur moyenne de l'image */
+    max-width: 600px; /* Largeur maximale pour éviter les images trop grandes */
+    height: auto; /* Maintient les proportions de l'image */
+    transition: transform 0.2s; /* Animation pour le survol */
+}
+
+.image-container img:hover {
+    transform: scale(1.05); /* Agrandit légèrement l'image au survol */
+}
